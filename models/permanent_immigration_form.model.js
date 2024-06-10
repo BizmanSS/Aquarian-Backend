@@ -1,56 +1,50 @@
 const mongoose = require("mongoose");
 
-const Permanent_Immigration_Form_Schema = mongoose.Schema(
+const Permanent_Immigration_Form_Schema = new mongoose.Schema(
     {
-        firstName: {
-            type: String,
-            required: true
-        },
-        lastName: {
-            type: String,
-            required: true
-        },
-        email: String,
-        phone: String,
-        maritalStatus: String,
-        age: String,
-        nationality: String,
-        region: String,
-        spouseTravelling: String,
-        children: String,
-        educationqualification: String,
-        educationqualification1: String,
-        passingyear: String,
-        board: String,
-        stream: String,
-        country: String,
-        workexperience: String,
-        workexperience1: String,
-        occupation: String,
-        employmentHistory: String,
-        workCountry: String,
-        englishTest: String,
-        frenchTest: String,
-        englishTestType: String,
-        frenchTestType: String,
+        firstname: { type: String, required: true },
+        lastname: { type: String, required: true },
+        email: { type: String, required: true },
+        phone: { type: String, required: true },
+        maritalStatus: { type: String, required: true },
+        age: { type: String, required: true },
+        nationality: { type: String, required: true },
+        region: { type: String, required: true },
+        spouseTravelling: { type: String },
+        children: { type: String },
+        educationqualification: { type: String, required: true },
+        educationqualification1: { type: String, required: true },
+        passingyear: { type: String },
+        board: { type: String },
+        stream: { type: String },
+        country: { type: String },
+        workexperience: { type: String, required: true },
+        workexperience1: { type: String },
+        occupation: { type: String },
+        employmentHistory: { type: String },
+        workCountry: { type: String },
+        englishTest: { type: String, required: true },
+        frenchTest: { type: String, required: true },
+        englishTestType: { type: String },
+        frenchTestType: { type: String },
         englishTestResult: {
-            reading: String,
-            writing: String,
-            listening: String,
-            speaking: String
+            reading: { type: String },
+            writing: { type: String },
+            listening: { type: String },
+            speaking: { type: String }
         },
         frenchTestResult: {
-            reading: String,
-            writing: String,
-            listening: String,
-            speaking: String
+            reading: { type: String },
+            writing: { type: String },
+            listening: { type: String },
+            speaking: { type: String }
         },
-        futureTestEnglish: String,
-        futureTestFrench: String,
-        certificateofNomination: String,
-        canadianjobOffer: String,
-        relativesinCanada: String,
-        otherInformation: String
+        futureTestEnglish: { type: String },
+        futureTestFrench: { type: String},
+        certificateofNomination: { type: String, required: true },
+        canadianjobOffer: { type: String, required: true },
+        relativesinCanada: { type: String, required: true },
+        otherInformation: { type: String }
     },
     {
         timestamps: true
