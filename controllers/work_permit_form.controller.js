@@ -2,8 +2,8 @@ const workPermForm = require('../models/work_permit_form.model.js')
 
 const postWorkPermForm = async (req,res) =>{
     try{
-        const wiForm = await workPermForm.create(req.body);
-        res.status(200).json(wiForm)
+        await workPermForm.create(req.body);
+        res.status(200).json({message: "success"})
     }
     catch(error){
         res.status(500).json({message: error.message})
@@ -20,8 +20,7 @@ const putWorkPermForm = async (req,res) =>{
             return res.status(404).json({message: "Error: 404"})
         }
 
-        const updatedWiForm = await workPermForm.findById(id)
-        res.status(200).json(updatedWiForm)
+        res.status(200).json({message: "success"})
     }
     catch(error)
     {

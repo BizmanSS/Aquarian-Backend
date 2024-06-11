@@ -8,7 +8,7 @@ const path = require('path');
 const permImmFormRoute = require("./routes/permanent_immigration_form.route.js")
 const workPermFormRoute = require("./routes/work_permit_form.route.js")
 const studyPermFormRoute = require("./routes/study_permit_form.route.js")
-const touristPermFormRoute = require("./routes/tourist_permit_form.route.js")
+const touristVisaFormRoute = require("./routes/tourist_visa_form.route.js")
 const app = express()
 const cors = require('cors');
 app.use(express.json())
@@ -35,7 +35,7 @@ app.use(morgan('combined', { stream: accessLogStream }));
 app.use("/api/permanent_immigration_form", permImmFormRoute);
 app.use("/api/work_permit_form", workPermFormRoute);
 app.use("/api/study_permit_form", studyPermFormRoute);
-app.use("/api/tourist_permit_form", touristPermFormRoute);
+app.use("/api/tourist_visa_form", touristVisaFormRoute);
 
 //
 PORT = process.env.PORT || 3001
