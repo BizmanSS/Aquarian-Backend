@@ -9,6 +9,7 @@ const permImmFormRoute = require("./routes/permanent_immigration_form.route.js")
 const workPermFormRoute = require("./routes/work_permit_form.route.js")
 const studyPermFormRoute = require("./routes/study_permit_form.route.js")
 const touristVisaFormRoute = require("./routes/tourist_visa_form.route.js")
+const bookAppointmentRoute = require("./routes/book_appointment.route.js")
 const app = express()
 const cors = require('cors');
 app.use(express.json())
@@ -36,6 +37,7 @@ app.use("/api/permanent_immigration_form", permImmFormRoute);
 app.use("/api/work_permit_form", workPermFormRoute);
 app.use("/api/study_permit_form", studyPermFormRoute);
 app.use("/api/tourist_visa_form", touristVisaFormRoute);
+app.use("/api/book_appointment", bookAppointmentRoute);
 
 //
 PORT = process.env.PORT || 3001
