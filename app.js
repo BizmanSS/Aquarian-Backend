@@ -10,6 +10,9 @@ const workPermFormRoute = require("./routes/work_permit_form.route.js")
 const studyPermFormRoute = require("./routes/study_permit_form.route.js")
 const touristVisaFormRoute = require("./routes/tourist_visa_form.route.js")
 const bookAppointmentRoute = require("./routes/book_appointment.route.js")
+const currenciesRoute = require("./routes/currencies.route.js")
+const occupationsRoute = require("./routes/occupations.route.js")
+const studyFieldsRoute = require("./routes/study_fields.route.js")
 const app = express()
 const cors = require('cors');
 app.use(express.json())
@@ -17,14 +20,14 @@ app.use(express.json())
 // Rate Limiter
 const apiLimiter = rateLimit({
     windowMs: 20 * 60 * 1000, // 20 minutes
-    max: 60, // limit each IP to 60 requests per windowMs
+    max: 200, // limit each IP to 60 requests per windowMs
     message: "Too many requests, please try again later."
 });
 app.use(apiLimiter);
 
 //White-List IP
 app.use(cors({
-    origin: ['http://localhost:3000','https://aquarian.vercel.app']
+    origin: ['http://localhost:3000','https://aquarian.vercel.app', 'http://localhost:3002']
 }));
 
 //Logging the requests
@@ -38,6 +41,9 @@ app.use("/api/work_permit_form", workPermFormRoute);
 app.use("/api/study_permit_form", studyPermFormRoute);
 app.use("/api/tourist_visa_form", touristVisaFormRoute);
 app.use("/api/book_appointment", bookAppointmentRoute);
+app.use("/api/currencies", currenciesRoute)
+app.use("/api/occupations", occupationsRoute)
+app.use("/api/study_fields", studyFieldsRoute)
 
 //
 PORT = process.env.PORT || 3001
