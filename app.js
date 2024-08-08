@@ -1,6 +1,6 @@
 require("dotenv").config()
 const express = require('express')
-const rateLimit = require('express-rate-limit');
+// const rateLimit = require('express-rate-limit');
 const mongoose = require('mongoose')
 const morgan = require('morgan');
 const fs = require('fs');
@@ -18,16 +18,16 @@ const cors = require('cors');
 app.use(express.json())
 
 // Rate Limiter
-const apiLimiter = rateLimit({
-    windowMs: 20 * 60 * 1000, // 20 minutes
-    max: 200, // limit each IP to 60 requests per windowMs
-    message: "Too many requests, please try again later."
-});
-app.use(apiLimiter);
+// const apiLimiter = rateLimit({
+//     windowMs: 20 * 60 * 1000, // 20 minutes
+//     max: 200, // limit each IP to 60 requests per windowMs
+//     message: "Too many requests, please try again later."
+// });
+// app.use(apiLimiter);
 
 //White-List IP
 app.use(cors({
-    origin: ['http://localhost:3000','https://aquarian.vercel.app', 'http://localhost:3002']
+    origin: 'https://www.iaquarian.com'
 }));
 
 //Logging the requests

@@ -10,6 +10,7 @@ const Book_Appointment_Schema = new mongoose.Schema(
         service: { type: String, required: true },
         serviceOther: { type: String },
         comments: { type: String },
+        date: {type: String, required: true}
     },
     {
         timestamps: true
